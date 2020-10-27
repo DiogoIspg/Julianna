@@ -1,0 +1,54 @@
+<nav class="navbar-expand-md navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+        <div class=" js-scroll-trigger" href="#" >
+            <img src="./assets/img/Logo2.png" class="logo-img">
+        </div>
+
+        <div class="navbar login-div" id="navbarResponsive" >
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
+                <div class="row">
+                    <div class="col-4">
+                        <label class="loginform" for="usernameInput"> Username: </label>
+                        <input class="input-login form-control" formControlName="username" type="text" id="usernameInput">
+                    </div>
+                    <div class="col-4">
+                        <label class="loginform" for="passwordInput"> Password: </label>
+                        <input class="input-login form-control" formControlName="password" type="password" id="passwordInput">
+                    </div>
+                    
+                    <div class="col-4">
+                        <button [disabled]="loading" class="btn btn-secondary" type="submit">Login</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="masthead">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-12">
+                    <h1 class="text-small-landing">
+                        Find your
+                    </h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-12">
+                    <h1 class="text-big-landing">
+                        Science Park
+                    </h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-12">
+                    <h1 class="text-small-landing">
+                        with our help!
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

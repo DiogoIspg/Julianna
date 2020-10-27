@@ -1,0 +1,23 @@
+<div class="logo">
+    <a class="simple-text">
+        SciPark
+    </a>
+</div>
+<div class="sidebar-wrapper">
+     <ul class="nav">
+         <ng-container *ngFor="let menuItem of menuItems">
+            <li routerLinkActive="active" *ngIf="hasRole(menuItem.requiredRole)" class="{{menuItem.class}} nav-item">
+                <a class="nav-link" [routerLink]="[menuItem.path]">
+                    <i class="fa fa-{{menuItem.icon}}"></i>
+                    <p>{{menuItem.title}}</p>
+                </a>
+            </li>
+        </ng-container>
+        <li>
+            <a class="nav-link" (click)="logout()">
+                <i class="fa fa-chevron-left"></i>
+                <p>Logout</p>
+            </a>
+        </li>
+    </ul>
+</div>

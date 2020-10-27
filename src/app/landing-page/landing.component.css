@@ -1,0 +1,65 @@
+.masthead {
+    display: table;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-top: 0;
+    padding: auto;
+    text-align: left;
+    color: #fff;
+    background-color: #ffffff;
+    background-size: cover;
+    background: url('/assets/img/Img1.png') top / cover ;
+}
+  
+.masthead .intro-body {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Cabin,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  margin: 0 0 35px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.text-small-landing {
+  color: rgb(255,255,255);
+  font-size: 1.7rem;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.text-big-landing {
+  text-align: center;
+  color: rgb(255,255,255);
+  font-size: 3rem;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.login-div {
+  opacity: 1 !important;
+  background-color: transparent !important;
+  box-shadow: 0 0 0 0;
+  margin-bottom: 0px;
+}
+
+.login-a {
+  color: rgb(255,255,255) !important;
+  font-size: 1.2rem !important;
+}
+
+.logo-img {
+  max-width: 10rem;
+}
+
+.loginform {
+  color: #fff;
+}
+
+#mainNav {
+  background: rgb(43,133,210) !important;
+}
