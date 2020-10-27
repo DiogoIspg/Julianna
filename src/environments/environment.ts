@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://https://scipark.azurewebsites.net/api',
+  apiUrl: 'https://scipark.azurewebsites.net/api',
 };
