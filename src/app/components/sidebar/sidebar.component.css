@@ -1,0 +1,11 @@
+.side-logo {
+    width: 7rem;
+    display: block;
+    margin-left: 13px;
+    margin-right: 15px;
+}
+
+.logo {
+    text-align: center;
+    text-align: -moz-center;
+}

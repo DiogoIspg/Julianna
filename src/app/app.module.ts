@@ -9,7 +9,7 @@ import { ComponentsModule } from './components/components.module';
 
 import { AppComponent } from './app.component';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { EntregasComponent } from './entregas/entregas.component';
 import { AgmCoreModule } from '@agm/core';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
@@ -55,7 +55,7 @@ import { HashLocationStrategy, LocationStrategy  } from '@angular/common';
   declarations: [
     LandingPageComponent,
     AppComponent,
-    DashboardComponent,
+    EntregasComponent,
     AdminComponent,
   ],
   providers: [  

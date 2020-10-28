@@ -16,7 +16,7 @@ export class JwtInterceptor implements HttpInterceptor {
                 setHeaders: { 
                     Authorization: `Bearer ${currentUser.token.result}`
                 },
-                headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+                // headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
             });
         }
 

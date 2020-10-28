@@ -1,0 +1,33 @@
+<div class="main-content">
+  <div class="container-fluid">
+
+    <div class="form-group row">
+        <label for="file" class="btn btn-outline-secondary col-2">
+            <i class="fa fa-cloud-upload"></i>
+            Upload new File
+        </label>
+        <input 
+            type="file"
+            id="file"
+            (change)="handleFileInput($event.target.files)">
+
+        <div *ngIf="fileToUpload" class="col-2">
+            <button type="button" class="btn btn-info" (click)="submitFile()">Submit File</button>
+        </div>
+    </div>
+
+      <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6" *ngFor="let file of fileSubmissions">
+              <div class="card card-stats">
+                  <div class="card-header card-header-info card-header-icon">
+                      <div class="card-icon" href="#" (click)="downloadFile(file.id, file.name)">
+                          <i class="fa fa-file"></i>
+                      </div>
+                      <p class="card-category">{{file.name}}</p>
+                      <p class="card-category">Uploaded at: {{file.displayDate}}</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
