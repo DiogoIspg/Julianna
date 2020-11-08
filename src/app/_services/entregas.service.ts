@@ -12,9 +12,9 @@ export class EntregasService {
     constructor(private http: HttpClient) { }
 
 
-    postFile(fileToUpload: File): Observable<any> {
+    postFile(fileToUpload: File, folderName: string): Observable<any> {
 
-        const endpoint = `${environment.apiUrl}/filesubmission/`;
+        const endpoint = `${environment.apiUrl}/filesubmission/${folderName}`;
         const formData: FormData = new FormData();
         // let reqHeaders = new HttpHeaders({ 'Content-Type': 'application/octet-stream'});
 

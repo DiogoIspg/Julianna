@@ -5,4 +5,5 @@ export class FileSubmission {
     createdDate: Date;
     contentType: string;
     displayDate: string;
+    folderName: string;
 }

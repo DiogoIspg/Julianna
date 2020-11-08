@@ -1,33 +1,69 @@
 <div class="main-content">
-  <div class="container-fluid">
+    <div class="container-fluid">
 
-    <div class="form-group row">
-        <label for="file" class="btn btn-outline-secondary col-2">
-            <i class="fa fa-cloud-upload"></i>
-            Upload new File
-        </label>
-        <input 
-            type="file"
-            id="file"
-            (change)="handleFileInput($event.target.files)">
+        <div class="spinner-border" *ngIf="fileSubmissions == null" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
 
-        <div *ngIf="fileToUpload" class="col-2">
-            <button type="button" class="btn btn-info" (click)="submitFile()">Submit File</button>
+        <div *ngIf="fileSubmissions">
+            <nav>
+                <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link" id="T-1-tab" data-toggle="tab" href="#T-tab" role="tab" aria-controls="T-tab" aria-selected="false">Templates</a>
+                <a class="nav-item nav-link active" id="M-1-tab" data-toggle="tab" href="#M1-tab" role="tab" aria-controls="M1-tab" aria-selected="true">Milestone 1</a>
+                <a class="nav-item nav-link" id="M-2-tab" data-toggle="tab" href="#M2-tab" role="tab" aria-controls="M2-tab" aria-selected="false">Milestone 2</a>
+                <a class="nav-item nav-link" id="M-3-tab" data-toggle="tab" href="#M3-tab" role="tab" aria-controls="M3-tab" aria-selected="false">Milestone 3</a>
+                </div>
+            </nav>
+
+            <div class="tab-content" id="nav-tabContent" >
+                <div *ngFor="let folderName of fileFolderNames" class="tab-pane fade show" [ngClass]="{'active' : folderName === 'M1' }" id="{{folderName}}-tab" role="tabpanel" aria-labelledby="{{folderName}}-tabContent">
+                    <div class="form-group row">
+                        <label for="file" class="btn btn-outline-secondary col-sm-12 col-md-4 col-lg-4">
+                            <i class="fa fa-cloud-upload"></i>
+                            Upload new File
+                        </label>
+                        <input 
+                            type="file"
+                            id="file"
+                            (change)="handleFileInput($event.target.files)">
+            
+                        <div *ngIf="fileToUpload" class="col-2">
+                            <button type="button" class="btn btn-info" (click)="submitFile(folderName)">Submit File</button>
+                        </div>
+                    </div>
+                
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">File name</th>
+                            <th scope="col">Upload date</th>
+                            <th scope="col">Download</th>
+                        </tr>
+                        </thead>
+                        <ng-container *ngFor="let file of fileSubmissions" >
+                            <tbody>
+                                <tr *ngIf="file.folderName === folderName" (click)="downloadFile(file.id, file.name)">
+                                    <td>
+                                        <i class="fa fa-file"></i>
+                                    </td>
+                                    <td>
+                                        {{file.name}}
+                                    </td>
+                                    <td>
+                                        {{file.displayDate}}
+                                    </td>
+                                    <td>
+                                        <i class="fa fa-download"></i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </ng-container>
+                    </table>
+                </div>
+            </div>
+
+
         </div>
     </div>
-
-      <div class="row">
-          <div class="col-lg-3 col-md-6 col-sm-6" *ngFor="let file of fileSubmissions">
-              <div class="card card-stats">
-                  <div class="card-header card-header-info card-header-icon">
-                      <div class="card-icon" href="#" (click)="downloadFile(file.id, file.name)">
-                          <i class="fa fa-file"></i>
-                      </div>
-                      <p class="card-category">{{file.name}}</p>
-                      <p class="card-category">Uploaded at: {{file.displayDate}}</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
 </div>

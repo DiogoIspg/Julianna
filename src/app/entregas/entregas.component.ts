@@ -10,7 +10,7 @@ import { EntregasService } from '@/_services/entregas.service';
 export class EntregasComponent implements OnInit {
 
   fileToUpload: File = null;
-
+  fileFolderNames: string[] = ['T', 'M1', 'M2', 'M3'];
   fileSubmissions: FileSubmission[];
 
   constructor(private entregasService: EntregasService) { }
@@ -32,8 +32,8 @@ export class EntregasComponent implements OnInit {
     this.fileToUpload = files.item(0);
   }
 
-  submitFile() {
-    this.entregasService.postFile(this.fileToUpload).subscribe(x => {
+  submitFile(fileFolderName: string) {
+    this.entregasService.postFile(this.fileToUpload, fileFolderName).subscribe(x => {
       this.refreshData();
     });
 
@@ -41,7 +41,6 @@ export class EntregasComponent implements OnInit {
   }
 
   downloadFile(id: string, filename:string) {
-    console.log("Download " + id);
     this.entregasService.getFileById(id, filename);
   }
 
