@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://https://scipark.azurewebsites.net/api'
+  apiUrl: 'https://scifind.azurewebsites.net/api'
 };
