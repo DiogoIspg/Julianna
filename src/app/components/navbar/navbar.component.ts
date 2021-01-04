@@ -108,7 +108,7 @@ export class NavbarComponent implements OnInit {
 
     getTitle(){
       var titlee = this.location.prepareExternalUrl(this.location.path());
-      if(titlee.charAt(0) === '#'){
+      if(titlee.charAt(0) === '#') {
           titlee = titlee.slice( 2 ).toUpperCase();
       }
 
@@ -116,6 +116,8 @@ export class NavbarComponent implements OnInit {
     }
 
     getUsername() {
-        return JSON.parse(localStorage.getItem('currentUser')).username;
+        if(localStorage.getItem('currentUser')) {
+            return JSON.parse(localStorage.getItem('currentUser')).username;
+        }
     }
 }

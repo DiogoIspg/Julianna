@@ -43,7 +43,6 @@ export class LandingPageComponent implements OnInit {
     get f() { return this.loginForm.controls; }
 
     onSubmit() {
-        console.log("onsu")
         this.submitted = true;
 
         // stop here if form is invalid
@@ -56,11 +55,15 @@ export class LandingPageComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
+                    let els = document.getElementsByClassName("modal-backdrop");
+                    while (els.length > 0) els[0].remove();
+
                     this.router.navigate([this.returnUrl]);
                 },
                 error => {
                     this.error = error;
                     this.loading = false;
                 });
+
     }
 }

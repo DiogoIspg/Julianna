@@ -9,9 +9,12 @@
     color: #fff;
     background-color: #ffffff;
     background-size: cover;
-    background: url('/assets/img/Img1.png') top / cover ;
+    background-image: url('assets/img/header-bg.png');
+    height: 750px;
+    margin-top: 35px;
 }
   
+
 .masthead .intro-body {
   display: table-cell;
   vertical-align: middle;
@@ -40,26 +43,34 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0px;
 }
 
-.login-div {
-  opacity: 1 !important;
-  background-color: transparent !important;
-  box-shadow: 0 0 0 0;
-  margin-bottom: 0px;
-}
-
-.login-a {
-  color: rgb(255,255,255) !important;
-  font-size: 1.2rem !important;
-}
-
-.logo-img {
-  max-width: 10rem;
-}
-
-.loginform {
-  color: #fff;
-}
-
 #mainNav {
   background: rgb(43,133,210) !important;
+  transition: all .3s;
+}
+
+.rounded-circle {
+  max-width: 80%;
+  padding: 20px;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.fa {
+  background: #fed136;
+  border-radius: 50%;
+}
+
+#about {
+  background-color: #fff;
+}
+
+h4 {
+  font-weight: 700;
+  font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.section-heading {
+  padding-top: 1em;
 }

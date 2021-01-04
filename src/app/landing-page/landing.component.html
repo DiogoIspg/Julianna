@@ -1,29 +1,54 @@
-<nav class="navbar-expand-md navbar navbar-expand-lg fixed-top" id="mainNav">
-    <div class="container">
-        <div class=" js-scroll-trigger" href="#" >
-            <img src="./assets/img/Logo2.png" class="logo-img">
-        </div>
-
-        <div class="navbar login-div" id="navbarResponsive" >
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
-                <div class="row">
-                    <div class="col-4">
-                        <label class="loginform" for="usernameInput"> Username: </label>
-                        <input class="input-login form-control" formControlName="username" type="text" id="usernameInput">
-                    </div>
-                    <div class="col-4">
-                        <label class="loginform" for="passwordInput"> Password: </label>
-                        <input class="input-login form-control" formControlName="password" type="password" id="passwordInput">
-                    </div>
-                    
-                    <div class="col-4">
-                        <button [disabled]="loading" class="btn btn-secondary" type="submit">Login</button>
-                    </div>
+<div id="page-top">
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top" style="height: 50px;padding-top: 0px;margin-top: 10px;margin-bottom: 10px;font-family: Montserrat, sans-serif; font-weight: bold;font-size: 1.5em;">
+            <img src="./assets/img/Logo1.png" style="width: 50px;">&nbsp;SCIFIND</a>
+            <button
+                style="background-color: #fed136;"
+                data-toggle="collapse" 
+                data-target="#navbarResponsive" 
+                class="navbar-toggler navbar-toggler-right" 
+                type="button" 
+                aria-controls="navbarResponsive" 
+                aria-expanded="false" 
+                aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="nav navbar-nav ml-auto text-uppercase">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" style="font-size: 90%; font-family: Montserrat,sans-serif;" href="#about">quem somos</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" style="font-size: 90%; font-family: Montserrat,sans-serif;" href="#service">serviços</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" style="font-size: 90%; font-family: Montserrat,sans-serif;" href="#team">equipa</a></li>
+                        <li class="nav-item"><a class="nav-link" style="font-size: 90%; font-family: Montserrat,sans-serif;" href="#" data-toggle="modal" data-target="#loginModal">login</a></li>
+                    </ul>
                 </div>
-            </form>
+        </div>
+    </nav>
+
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <label class="loginform" for="usernameInput"> Username: </label>
+                                <input class="input-login form-control" formControlName="username" type="text" id="usernameInput">
+                            </div>
+                            <div class="col-12">
+                                <label class="loginform" for="passwordInput"> Password: </label>
+                                <input class="input-login form-control" formControlName="password" type="password" id="passwordInput">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button [disabled]="loading" type="submit" class="btn btn-info">Login</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</nav>
 
 <div class="masthead">
     <div class="intro-body">
@@ -51,4 +76,116 @@
             </div>
         </div>
     </div>
+</div>
+    <section id="about" style="padding-top: 100px; padding-bottom: 100px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase section-heading">QUEM SOMOS</h2>
+                    <h3 class="section-subheading" style="margin-bottom: 30px;font-family: Montserrat, sans-serif;font-style: normal;font-weight: bold;color: #fed136;">SCIFIND</h3>
+                    <p style="text-align: center;font-family: Montserrat, sans-serif;">
+                        A Scifind é uma marca de um software a iniciar-se em Portugal, disponibilizando um serviço de apoio à decisão para a escolha do Parque Cientifico e Tecnológico que poderá ser o mais indicado para uma empresa STARTUP. Esta escolha baseia-se
+                        na informação recolhida de todos os parques existentes em Portugal e baseia-se nas áreas de Bem-Estar; Áreas de atuação; Infraestruturas e Incubadora. Queremos também, auxiliar os parques a evoluírem de modo a que possam evoluir
+                        e estarem na frente da indústria e inovação no mercado português.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="service" class="bg-light" style="padding-top: 100px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase section-heading">SERVIÇOS</h2>
+                    <p style="text-align: center;font-family: Montserrat, sans-serif;">
+                        Somos uma empresa que atua na área de suporte às STARTUP’s, auxiliando na escolha do Parque Científico e Tecnológico de forma a que a escolha do mesmo vá de encontra às necessidades de cada empresa.
+                    </p>
+                </div>
+            </div>
+            <div class="row text-center" style="padding-top: 30px;">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-bullseye fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="section-heading">Missão</h4>
+                    <p class="text-muted">Auxiliar as STARTUP’s na escolha do Parque Cientifico e Tecnológico através de uma plataforma de apoio à decisão.</p>
+                </div>
+                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-eye fa-stack-1x fa-inverse"></i></span>
+                    <h4 class="section-heading">Visão</h4>
+                    <p class="text-muted">Queremos ser um parceiro para todas as empresas, de modo a que estas consigam ter as ferramentas adequadas para a escolha do parque adequado e assim sermos uma mais valia no mercado.</p>
+                </div>
+                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-handshake-o fa-stack-1x fa-inverse"></i></span>
+                    <h4 class="section-heading">Valores</h4>
+                    <p class="text-muted">Transparência, eficiência, inovação, conforto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="team" class="bg-light" style="padding-top: 100px;">
+        <div class="container">
+            <div class="col-lg-12 text-center">
+                <h2 class="text-uppercase section-heading">Equipa</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/team/Rui.jpg">
+                        <h4>Rui Sousa</h4>
+                        <p class="text-muted">Gestor de projeto</p>
+                        <p class="text-justify text-muted">Administrador de sistemas desde 2002, fã por novas tecnologias e desporto automóvel.<br><br>As minhas responsabilidades na equipa incluem:<br>- aprovar e gerir o cronograma geral do projeto;<br>- prever e gerir os principais problemas
+                            e conflitos;<br>- gerir e garantir o âmbito do projeto;<br>- divulgar de forma transparente todas as informações do protejo que sejam requeridas pelos stakeholders;<br>- prever e gerir os principais riscos do projeto;<br> desenvolver
+                            e implementar métricas para o acompanhamento e avaliação da execução do projeto;<br>- assegurar a qualidade e a excelência na hora da entrega do projeto.</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/team/Neves.jpg">
+                        <h4>Diogo Neves</h4>
+                        <p class="text-muted">Programador</p>
+                        <p class="text-justify text-muted">Software developement desde 2016. Programador nato desde pequeno, começou a desenvolver web apps aos 16 e desde então não deixou o ramo. <br><br>As minhas responsabilidades na equipa incluem:<br>- Desenvolvimento de Software;<br>-
+                            Desenvolvimento Website;<br>- Arquitectura Base de Dados;<br>- Modelos de classes, relacionais e deployment.<br></p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/team/Pedro.jpg">
+                        <h4>Pedro Aguiar</h4>
+                        <p class="text-muted">Programador</p>
+                        <p class="text-justify text-muted">Iniciei as minhas atividades á 5 anos na área de administrações de sistemas, tenho-me inscrito no curso de Eng. Informática no ISPGAYA em 2017.<br><br>As minhas responsabilidades na equipa incluem:<br>- Desenvolvimento de Software;<br>-
+                            Desenvolvimento Website;<br>- Arquitectura Base de Dados;<br>- Modelos de classes, relacionais e deployment.<br></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/team/Hugo.jpg">
+                        <h4>Hugo Miranda</h4>
+                        <p class="text-muted">Analista</p>
+                        <p class="text-justify text-muted">Programador web desde 2010, coordenador da equipa de desenvolvimento desde 2019, interesse por novas tecnologias.<br><br>As minhas responsabilidades na equipa incluem:<br> - Relatório de requisitos;<br>- Relatório de testes de
+                            aceitação I;<br>- Revisão do código;<br>- Teste de sobrevivência do projeto;<br>- Manual de instalação e manutenção;<br>- Instalação da aplicação "easy-to-use".</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/team/Ruben.jpg">
+                        <h4>Rúben Lacerda</h4>
+                        <p class="text-muted"> Analista </p>
+                        <p class="text-justify text-muted"> O maior da terra dele.
+                            <br><br><br><br> As minhas responsabilidades na equipa incluem:
+                            <br>- Relatório de requisitos;
+                            <br>- Relatório de testes de aceitação I;
+                            <br>- Revisão do código;
+                            <br>- Teste de sobrevivência do projeto;
+                            <br>- Manual de instalação e manutenção;
+                            <br>- Instalação da aplicação "easy-to-use".
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/team/Nuno.jpg">
+                        <h4>Nuno Bernardo</h4>
+                        <p class="text-muted">Secretário</p>
+                        <p class="text-justify text-muted">Técnico de multimédia e audiovisual desde 2010. Interesse por novas tecnologias e desporto.<br><br>As minhas responsabilidades na equipa incluem:<br>- Implementação e manutenção do site da empresa;<br>- Elaboração de atas de reunião
+                            do projeto;<br>- Verificação dos documentos;<br>- Criação de um cd/dvd/usb com a documentação do projeto;<br>- Criação do artigo científico.&nbsp;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
