@@ -27,6 +27,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HashLocationStrategy, LocationStrategy  } from '@angular/common';
+import { CostumizeComponent } from './costumize/costumize.component';
 
 @NgModule({
   imports: [
@@ -57,6 +58,7 @@ import { HashLocationStrategy, LocationStrategy  } from '@angular/common';
     AppComponent,
     EntregasComponent,
     AdminComponent,
+    CostumizeComponent,
   ],
   providers: [  
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

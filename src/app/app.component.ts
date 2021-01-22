@@ -21,7 +21,8 @@ export class AppComponent {
     }
 
     shouldLoadBars() {
-        return this.router.url.indexOf('landing') === -1;
+        return this.router.url.indexOf('landing') !== -1 
+        && this.router.url.indexOf('costumize') !== -1;
     }
 
     logout() {

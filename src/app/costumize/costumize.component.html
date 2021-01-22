@@ -1,0 +1,58 @@
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="#page-top" 
+        style="font-family: Montserrat, sans-serif; font-weight: bold;font-size: 1.5em;">
+        JULLIANA</a>
+        <button
+            style="background-color: #fed136;"
+            data-toggle="collapse" 
+            data-target="#navbarResponsive" 
+            class="navbar-toggler navbar-toggler-right" 
+            type="button" 
+            aria-controls="navbarResponsive" 
+            aria-expanded="false" 
+            aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto text-uppercase">
+                </ul>
+            </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <div class="col-12">
+                <form [formGroup]="myForm">
+
+                    <div class="block"> Jewelry Type </div>
+                    <ul>
+                        <input type="radio" id="Ring" checked formControlName="type" value="Ring">
+                        <label for="Ring">Ring</label><br>
+                    </ul>
+
+                    <div class="block"> Gem Color </div>
+                    <ul>
+                        <input type="radio" id="Gold" checked formControlName="gem" value="Gold">
+                        <label for="Gold">Gold</label><br>
+                        <input type="radio" id="Saphire" formControlName="gem" value="Saphire">
+                        <label for="Saphire">Saphire</label><br>
+                        <input type="radio" id="Ruby" formControlName="gem" value="Ruby">
+                        <label for="Ruby">Ruby</label><br>
+                        <input type="radio" id="Emerald" formControlName="gem" value="Emerald">
+                        <label for="Emerald">Emerald</label><br>
+                    </ul>
+
+                    <div class="block"> Final Price </div>
+                    <ul>
+                        <input readonly type="text" class="price"  formControlName="price">
+                    </ul>
+                </form>
+            </div>
+        </div>
+        <div class="col-8" id="render">
+        </div>
+    </div>
+</div>

@@ -3,9 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from 'app/_guards/auth.guard';
 import { Role } from 'app/_models/role';
 
-import { IconsComponent } from './icons/icons.component';
 import { EntregasComponent } from './entregas/entregas.component';
 import { LandingPageComponent } from './landing-page/landing.component';
+import { CostumizeComponent } from './costumize/costumize.component';
 
 export const appRoutes: Routes = [
     { 
@@ -16,6 +16,10 @@ export const appRoutes: Routes = [
     { 
         path: 'landing', 
         component: LandingPageComponent 
+    },
+    { 
+        path: 'costumize', 
+        component: CostumizeComponent, 
     },
     // otherwise redirect to home
     { path: '**', redirectTo: 'entregas' }
