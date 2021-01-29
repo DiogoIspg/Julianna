@@ -1,32 +1,8 @@
-<nav class="navbar navbar-dark navbar-expand-lg bg-dark" id="mainNav">
-    <div class="container">
-        <a class="navbar-brand" href="#page-top" 
-        style="font-family: Montserrat, sans-serif; font-weight: bold;font-size: 1.5em;">
-        JULLIANA</a>
-        <button
-            style="background-color: #fed136;"
-            data-toggle="collapse" 
-            data-target="#navbarResponsive" 
-            class="navbar-toggler navbar-toggler-right" 
-            type="button" 
-            aria-controls="navbarResponsive" 
-            aria-expanded="false" 
-            aria-label="Toggle navigation">
-            <i class="fa fa-bars"></i>
-        </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="nav navbar-nav ml-auto text-uppercase">
-                </ul>
-            </div>
-    </div>
-</nav>
-
-<div class="container">
+<div class="container" style="margin-top: 1rem ;">
     <div class="row">
         <div class="col-4">
             <div class="col-12">
                 <form [formGroup]="myForm">
-
                     <div class="block"> Jewelry Type </div>
                     <ul>
                         <input type="radio" id="Ring" checked formControlName="type" value="Ring">
@@ -49,6 +25,18 @@
                     <ul>
                         <input readonly type="text" class="price"  formControlName="price">
                     </ul>
+
+                    <div *ngIf="isLoggedIn">
+                        <button class="btn btn-j-primary btn-block" (click)="saveJewels()"> 
+                            Add to Cart 
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div *ngIf="!isLoggedIn">
+                        <button class="btn btn-block" disabled> 
+                            Register to buy
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>

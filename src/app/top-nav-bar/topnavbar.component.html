@@ -1,0 +1,81 @@
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark" id="mainNav" style="margin-bottom: 0px;">
+    <div class="container">
+        <a class="navbar-brand" href="#" 
+        style="font-family: Montserrat, sans-serif; font-weight: bold;font-size: 1.5em;">
+        JULIANNA</a>
+        <button
+            style="background-color: #000;"
+            data-toggle="collapse" 
+            data-target="#navbarResponsive" 
+            class="navbar-toggler navbar-toggler-right" 
+            type="button" 
+            aria-controls="navbarResponsive" 
+            aria-expanded="false" 
+            aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div *ngIf="!isLoggedIn" class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="nav navbar-nav ml-auto text-uppercase">
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" style="font-size: 90%; font-family: Montserrat,sans-serif;" href="/#/costumize">Customize! </a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" style="font-size: 90%; font-family: Montserrat,sans-serif;" href="#about">Who we are</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" style="font-size: 90%; font-family: Montserrat,sans-serif;" href="#service">Services</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" style="font-size: 90%; font-family: Montserrat,sans-serif;" href="#team">Team</a></li>
+                <li class="nav-item"><a class="nav-link" style="font-size: 90%; font-family: Montserrat,sans-serif;" href="#" data-toggle="modal" data-target="#loginModal">login</a></li>
+            </ul>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive" *ngIf="isLoggedIn">
+            <ul class="nav navbar-nav ml-auto text-uppercase">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" style="font-size: 90%; font-family: Montserrat,sans-serif;" href="/#/costumize">
+                        Customize 
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" style="font-size: 90%; font-family: Montserrat,sans-serif;" href="/#/costumize">
+                        My Orders 
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" style="font-size: 90%; font-family: Montserrat,sans-serif;" href="/#/MyJewelries">
+                        Cart ({{items.length}})
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    Welcome {{user.username}}!
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" style="font-size: 90%; font-family: Montserrat,sans-serif;" href="#" (click)="logout()">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <!-- Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-ov">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <label class="loginform" for="usernameInput"> Username: </label>
+                            <input class="input-login form-control" formControlName="username" type="text" id="usernameInput">
+                        </div>
+                        <div class="col-12">
+                            <label class="loginform" for="passwordInput"> Password: </label>
+                            <input class="input-login form-control" formControlName="password" type="password" id="passwordInput">
+                        </div>
+                    </div>
+                </div>
+                <a [disabled]="loading" class="btn btn-j-primary " href="#">Register</a>
+                <button [disabled]="loading" type="submit" class="btn btn-j-primary">Login</button>
+            </form>
+        </div>
+    </div>
+</div>

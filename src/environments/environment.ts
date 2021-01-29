@@ -5,6 +5,6 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://scifind.azurewebsites.net/api',
-  // apiUrl: 'https://localhost:5001/api',
+  // apiUrl: 'https://scifind.azurewebsites.net/api',
+  apiUrl: 'https://localhost:5001/api',
 };

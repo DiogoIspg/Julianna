@@ -1,0 +1,22 @@
+.modal-ov {
+    text-align: center;
+    padding: 2rem;
+}
+  
+.btn-j-primary {
+    color: #fff;
+    background-color: #7F3902;
+}
+
+.btn-j-primary:hover {
+    color: #fff;
+    background-color: #603000;
+}
+
+.form-control {
+    background-image: linear-gradient(to top, #000 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
+}
+
+.loginform {
+    color: #7F3902;
+}

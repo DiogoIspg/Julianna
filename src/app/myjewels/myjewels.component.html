@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header card-header-tabs card-header-primary" style="background:#7F3902;">
+            <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                    <h3 class="nav-tabs-title" style="padding:0px">
+                            My Cart
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+        <div *ngIf="!allJewelries">
+            You don't currently have saved Jewelries.
+        </div>
+            <div style="text-align: center;">
+                <div *ngIf="allJewelries" >
+                    <div class="row" style="font-weight: bold;">
+                        <div class="col-2">
+                            Type
+                        </div>
+                        <div class="col-2">
+                            Gem
+                        </div>
+                        <div class="col-2">
+                            Price
+                        </div>
+                        <div class="col-6">
+                        </div>
+                    </div>
+                    <div class="row" *ngFor="let jewels of allJewelries; index as i;">
+                        <div class="col-2">
+                            {{jewels.type}}
+                        </div>
+                        <div class="col-2">
+                            {{jewels.gem}}
+                        </div>
+                        <div class="col-2">
+                            {{jewels.price}}
+                        </div>
+                        <div class="col-2">
+                        </div>
+                        <div class="col-2">
+                            <a class="btn" style="background:#7F3902;" href="/#/costumize?type={{jewels.type}}&gem={{jewels.gem}}&price={{jewels.price}}">
+                                Edit 
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="col-2">
+                            <button class="btn btn-danger" (click)="delete(i)">
+                                Delete
+                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span6">
+                            <div class="mycontent-left">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" style="text-align: middle;">
+                        <div class="col-1" style="font-weight: bold;">Total</div>
+                        <div class="col-3"></div>
+                        <div class="col-2">{{priceSum}}€</div>
+                        <div class="col-2"></div>
+                        <div class="col-2">
+                            <a class="btn btn-success" href="/#/Checkout" >
+                                Checkout
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

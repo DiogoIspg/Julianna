@@ -11,7 +11,6 @@
     background-size: cover;
     background-image: url('assets/img/header-bg.png');
     height: 750px;
-    margin-top: 35px;
 }
   
 
@@ -44,8 +43,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #mainNav {
-  background: #7F3902 !important;
+  background: #212121 !important;
   transition: all .3s;
+  margin-bottom: 0px !important;
 }
 
 .rounded-circle {
@@ -58,7 +58,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .fa {
-  background: #fed136;
+  background: #474747;
+  border-radius: 50%;
+}
+.fas {
+  background: #474747;
   border-radius: 50%;
 }
 
@@ -73,4 +77,27 @@ h4 {
 
 .section-heading {
   padding-top: 1em;
+}
+
+.modal-ov {
+  text-align: center;
+ 
+}
+
+.btn-j-primary {
+  color: #fff;
+  background-color: #7F3902;
+}
+
+.btn-j-primary:hover {
+  color: #fff;
+  background-color: #603000;
+}
+
+.form-control {
+  background-image: linear-gradient(to top, #000 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
+}
+
+.loginform {
+  color: #7F3902;
 }

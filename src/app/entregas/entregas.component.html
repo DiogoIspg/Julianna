@@ -1,19 +1,6 @@
 <div class="main-content">
     <div class="container-fluid">
-
-        <div class="spinner-border" *ngIf="fileSubmissions == null" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-
-        <div *ngIf="fileSubmissions">
-            <nav>
-                <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                <a class="nav-item nav-link" id="T-1-tab" data-toggle="tab" href="#T-tab" role="tab" aria-controls="T-tab" aria-selected="false">Templates</a>
-                <a class="nav-item nav-link active" id="M-1-tab" data-toggle="tab" href="#M1-tab" role="tab" aria-controls="M1-tab" aria-selected="true">Milestone 1</a>
-                <a class="nav-item nav-link" id="M-2-tab" data-toggle="tab" href="#M2-tab" role="tab" aria-controls="M2-tab" aria-selected="false">Milestone 2</a>
-                <a class="nav-item nav-link" id="M-3-tab" data-toggle="tab" href="#M3-tab" role="tab" aria-controls="M3-tab" aria-selected="false">Milestone 3</a>
-                </div>
-            </nav>
+        <div>
 
             <div class="tab-content" id="nav-tabContent" >
                 <div *ngFor="let folderName of fileFolderNames" class="tab-pane fade show" [ngClass]="{'active' : folderName === 'M1' }" id="{{folderName}}-tab" role="tabpanel" aria-labelledby="{{folderName}}-tabContent">

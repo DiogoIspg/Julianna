@@ -20,13 +20,4 @@ export class AppComponent {
         return this.currentUser && this.currentUser.role === Role.Admin;
     }
 
-    shouldLoadBars() {
-        return this.router.url.indexOf('landing') !== -1 
-        && this.router.url.indexOf('costumize') !== -1;
-    }
-
-    logout() {
-        this.authenticationService.logout();
-        this.router.navigate(['/landing']);
-    }
 }

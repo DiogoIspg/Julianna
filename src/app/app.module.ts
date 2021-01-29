@@ -28,6 +28,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { HashLocationStrategy, LocationStrategy  } from '@angular/common';
 import { CostumizeComponent } from './costumize/costumize.component';
+import { TopNavBarComponent } from './top-nav-bar/topnavbar.component';
+import { MyjewelsComponent } from './myjewels/myjewels.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   imports: [
@@ -59,6 +62,9 @@ import { CostumizeComponent } from './costumize/costumize.component';
     EntregasComponent,
     AdminComponent,
     CostumizeComponent,
+    TopNavBarComponent,
+    MyjewelsComponent,
+    CheckoutComponent,
   ],
   providers: [  
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

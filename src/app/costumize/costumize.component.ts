@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import * as THREE from 'three';
 const OrbitControls = require('three-orbitcontrols')
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { AuthenticationService } from '@/_services/authentication.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -18,21 +20,41 @@ export class CostumizeComponent implements OnInit {
   scene: any;
   camera: any;
 
-  constructor(private formBuilder: FormBuilder,) {
-    this.animate = this.animate.bind(this)
+  isLoggedIn = false;
+
+  paramType = "";
+  paramGem = "";
+
+  constructor(private formBuilder: FormBuilder,
+    private auth: AuthenticationService,
+    private router: Router,
+    private ra: ActivatedRoute) {
+
+    this.ra.queryParams.subscribe(params => {
+      this.paramType = params['type'];
+      this.paramGem = params['gem'];
+    });
+
+    if(localStorage.getItem('currentUser')) {
+      this.isLoggedIn = true;
+    }
+
+    this.animate = this.animate.bind(this);
 
     this.myForm = this.formBuilder.group({
       type: 'Ring',
       gem: 'Gold',
       price: '200€'
     });
+
+   
   
     this.onChanges();
   }
 
   onChanges(): void {
+
     this.myForm.valueChanges.subscribe(val => {
-      console.log(val);
       if(val.gem === 'Saphire') {
         this.gemColor = 'lightblue';
       } else if(val.gem === 'Ruby') {
@@ -46,6 +68,7 @@ export class CostumizeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.scene = new THREE.Scene();
     let elm = document.getElementById("render");
 
@@ -68,13 +91,24 @@ export class CostumizeComponent implements OnInit {
 
     let controls = new OrbitControls(this.camera, this.renderer.domElement);
 
+    const gemTopGeometry = new THREE.SphereGeometry( 0.5, 4, 4 );
+    const gemTopMaterial = new THREE.MeshBasicMaterial( {color: 'white'} );
+    const gemTopSphere = new THREE.Mesh( gemTopGeometry, gemTopMaterial );
+    gemTopSphere.position.y = 12.1;
+    this.scene.add( gemTopSphere )
+
     this.addMaterials(this.scene)
 
-    this.camera.position.z = 30;
+    this.camera.position.z = 23;
     
     this.animate();
+
+    if(this.paramType) {
+      this.myForm.patchValue({type: this.paramType, gem : this.paramGem, price: '200€'});
+    }
   }
 
+  
   animate() {
     requestAnimationFrame(this.animate);
     this.sphere.material.color.setColorName(this.gemColor);
@@ -82,11 +116,6 @@ export class CostumizeComponent implements OnInit {
   };
 
   addMaterials(scene) {
-    const gemTopGeometry = new THREE.SphereGeometry( 0.5, 4, 4 );
-    const gemTopMaterial = new THREE.MeshBasicMaterial( {color: 'white'} );
-    const gemTopSphere = new THREE.Mesh( gemTopGeometry, gemTopMaterial );
-    gemTopSphere.position.y = 12.1;
-    scene.add( gemTopSphere )
     
     // const d1 = new THREE.SphereGeometry( 0.5, 4, 4 );
     // const d1MB = new THREE.MeshBasicMaterial( {color: 'white'} );
@@ -95,4 +124,17 @@ export class CostumizeComponent implements OnInit {
     // scene.add( d1M )
   }
 
+  saveJewels() {
+    console.log({...this.myForm.value});
+
+    let savedJewelries = 'savedJ';
+    let saved = [];
+
+    if(localStorage.getItem(savedJewelries)) {
+      saved = JSON.parse(localStorage.getItem(savedJewelries));
+    }
+
+    saved.push({...this.myForm.value})
+    localStorage.setItem(savedJewelries, JSON.stringify(saved));
+  }
 }

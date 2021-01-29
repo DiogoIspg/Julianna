@@ -6,11 +6,18 @@ import { Role } from 'app/_models/role';
 import { EntregasComponent } from './entregas/entregas.component';
 import { LandingPageComponent } from './landing-page/landing.component';
 import { CostumizeComponent } from './costumize/costumize.component';
+import { MyjewelsComponent } from './myjewels/myjewels.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 export const appRoutes: Routes = [
     { 
-        path: 'entregas',      
-        component: EntregasComponent,
+        path: 'Checkout', 
+        component: CheckoutComponent, 
+        canActivate: [AuthGuard], 
+    },
+    { 
+        path: 'MyJewelries', 
+        component: MyjewelsComponent, 
         canActivate: [AuthGuard], 
     },
     { 
@@ -21,8 +28,9 @@ export const appRoutes: Routes = [
         path: 'costumize', 
         component: CostumizeComponent, 
     },
+    
     // otherwise redirect to home
-    { path: '**', redirectTo: 'entregas' }
+    { path: '**', redirectTo: 'landing' }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

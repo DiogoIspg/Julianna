@@ -1,92 +1,39 @@
-<div id="page-top">
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand" href="#page-top" 
-            style="font-family: Montserrat, sans-serif; font-weight: bold;font-size: 1.5em;">
-            JULLIANA</a>
-            <button
-                style="background-color: #fed136;"
-                data-toggle="collapse" 
-                data-target="#navbarResponsive" 
-                class="navbar-toggler navbar-toggler-right" 
-                type="button" 
-                aria-controls="navbarResponsive" 
-                aria-expanded="false" 
-                aria-label="Toggle navigation">
-                <i class="fa fa-bars"></i>
-            </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="nav navbar-nav ml-auto text-uppercase">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" style="font-size: 90%; font-family: Montserrat,sans-serif;" href="/#/costumize">Costumizar! </a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" style="font-size: 90%; font-family: Montserrat,sans-serif;" href="#about">quem somos</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" style="font-size: 90%; font-family: Montserrat,sans-serif;" href="#service">serviços</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" style="font-size: 90%; font-family: Montserrat,sans-serif;" href="#team">equipa</a></li>
-                        <li class="nav-item"><a class="nav-link" style="font-size: 90%; font-family: Montserrat,sans-serif;" href="#" data-toggle="modal" data-target="#loginModal">login</a></li>
-                    </ul>
-                </div>
-        </div>
-    </nav>
-
-    <!-- Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-12">
-                                <label class="loginform" for="usernameInput"> Username: </label>
-                                <input class="input-login form-control" formControlName="username" type="text" id="usernameInput">
-                            </div>
-                            <div class="col-12">
-                                <label class="loginform" for="passwordInput"> Password: </label>
-                                <input class="input-login form-control" formControlName="password" type="password" id="passwordInput">
-                            </div>
-                        </div>
+<div>
+    <div class="masthead">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-12">
+                        <h1 class="text-small-landing">
+                            Customize
+                        </h1>
                     </div>
-                    <div class="modal-footer">
-                        <button [disabled]="loading" type="submit" class="btn btn-info">Login</button>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 col-12">
+                        <h1 class="text-big-landing">
+                            YOUR JEWELRY
+                        </h1>
                     </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-<div class="masthead">
-    <div class="intro-body">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5 col-12">
-                    <h1 class="text-small-landing">
-                        Costumize
-                    </h1>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-5 col-12">
-                    <h1 class="text-big-landing">
-                        As suas Joias
-                    </h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-5 col-12">
-                    <h1 class="text-small-landing">
-                        connosco!
-                    </h1>
+                <div class="row">
+                    <div class="col-md-5 col-12">
+                        <h1 class="text-small-landing">
+                            with us!
+                        </h1>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
     <section id="about" style="padding-top: 100px; padding-bottom: 100px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="text-uppercase section-heading">QUEM SOMOS</h2>
-                    <h3 class="section-subheading" style="margin-bottom: 30px;font-family: Montserrat, sans-serif;font-style: normal;font-weight: bold;color: #7F3902;">JULLIANA</h3>
+                    <h2 class="text-uppercase section-heading">WHO ARE WE ?</h2>
+                    <h3 class="section-subheading" style="margin-bottom: 30px;font-family: Montserrat, sans-serif;font-style: normal;font-weight: bold;color: #7F3902;">JULIANNA</h3>
                     <p style="text-align: center;font-family: Montserrat, sans-serif;">
-                        A Julianna é a plataforma que permite desenhar as suas joias no conforto da sua casa e nós tratamos do resto!</p>
+                        JULIANNA is a platform that brings jewelry to a new level of confort, make what you love and we'll do the rest!
                 </div>
             </div>
         </div>
@@ -95,9 +42,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="text-uppercase section-heading">SERVIÇOS</h2>
+                    <h2 class="text-uppercase section-heading">Services</h2>
                     <p style="text-align: center;font-family: Montserrat, sans-serif;">
-                        Somos uma empresa que atua na área de suporte às STARTUP’s, auxiliando na escolha do Parque Científico e Tecnológico de forma a que a escolha do mesmo vá de encontra às necessidades de cada empresa.
+                        We're a company that is making the world shine with each customer, we bring joy with our jewlery  
                     </p>
                 </div>
             </div>
@@ -107,20 +54,20 @@
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-check-circle fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="section-heading">Missão</h4>
-                    <p class="text-muted">Fazer o mundo brilhar a começar por si.</p>
+                    <h4 class="section-heading">Mission</h4>
+                    <p class="text-muted">Make the world shine starting with you.</p>
                 </div>
                 <div class="col-md-4"><span class="fa-stack fa-4x">
                     <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fa far fa-gem fa-stack-1x "></i></span>
-                    <h4 class="section-heading">Costumização</h4>
-                    <p class="text-muted">Queremos dar-lhe a peça que sempre desejou mas nunca a encontrou, agora pode-a fazer ao nosso lado.</p>
+                    <i class="fa fa-cubes fa-stack-1x fa-inverse"></i></span>
+                    <h4 class="section-heading">Customization</h4>
+                    <p class="text-muted">We want to give you the piece you've always desered but never found! Make it with our help.</p>
                 </div>
                 <div class="col-md-4"><span class="fa-stack fa-4x">
                     <i class="fa fa-circle fa-stack-2x text-primary"></i>
                     <i class="fa fa-comments fa-stack-1x fa-inverse"></i></span>
-                    <h4 class="section-heading">Apoio</h4>
-                    <p class="text-muted">Conte connosco se tiver alguma dúvida, estamos sempre disponiveis.</p>
+                    <h4 class="section-heading">Support</h4>
+                    <p class="text-muted">If you have any question you can reach us at any time!</p>
                 </div>
             </div>
         </div>
