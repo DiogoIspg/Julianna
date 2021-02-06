@@ -5,20 +5,26 @@
                 <form [formGroup]="myForm">
                     <div class="block"> Jewelry Type </div>
                     <ul>
-                        <input type="radio" id="Ring" checked formControlName="type" value="Ring">
-                        <label for="Ring">Ring</label><br>
+                        <br>
+                        <mat-radio-group formControlName="type" >
+                            <mat-radio-button checked value="Ring"  >Ring</mat-radio-button>
+                        </mat-radio-group>
                     </ul>
 
                     <div class="block"> Gem Color </div>
                     <ul>
-                        <input type="radio" id="Gold" checked formControlName="gem" value="Gold">
-                        <label for="Gold">Gold</label><br>
-                        <input type="radio" id="Saphire" formControlName="gem" value="Saphire">
-                        <label for="Saphire">Saphire</label><br>
-                        <input type="radio" id="Ruby" formControlName="gem" value="Ruby">
-                        <label for="Ruby">Ruby</label><br>
-                        <input type="radio" id="Emerald" formControlName="gem" value="Emerald">
-                        <label for="Emerald">Emerald</label><br>
+                        <mat-radio-group formControlName="gem" >
+                            <br>
+                            <mat-radio-button value="Gold" >Gold</mat-radio-button>
+                            <br>
+                            <mat-radio-button value="Saphire" >Saphire</mat-radio-button>
+                            <br>
+                            <mat-radio-button value="Ruby" >Ruby</mat-radio-button>
+                            <br>
+                            <mat-radio-button value="Emerald" >Emerald</mat-radio-button>
+                            <br>
+                        </mat-radio-group>
+                          
                     </ul>
 
                     <div class="block"> Final Price </div>

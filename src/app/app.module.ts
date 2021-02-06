@@ -25,7 +25,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { MatRadioModule } from '@angular/material/radio'; 
 import { HashLocationStrategy, LocationStrategy  } from '@angular/common';
 import { CostumizeComponent } from './costumize/costumize.component';
 import { TopNavBarComponent } from './top-nav-bar/topnavbar.component';
@@ -52,6 +52,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     MatTooltipModule,
     HttpClientModule,
     BrowserModule,
+    MatRadioModule,
     // AgmCoreModule.forRoot({
       //   apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
       // })

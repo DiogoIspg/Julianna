@@ -11,13 +11,82 @@
         </div>
         <div class="card-body">
             <form [formGroup]="checkoutForm" class="mat-form-field" (ngSubmit)="onSubmit()">
-                <mat-form-field appearance="outline">
-                    <mat-label>Name</mat-label>
-                    <input matInput placeholder="Name">
-                </mat-form-field>
-                
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field appearance="outline">
+                            <mat-label>First Name</mat-label>
+                            <input matInput placeholder="First Name">
+                        </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Last Name</mat-label>
+                            <input matInput placeholder="Last Name">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Billing Address</mat-label>
+                            <input matInput placeholder="Billing Address">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Billing Address 2</mat-label>
+                            <input matInput placeholder="Billing Address 2">
+                        </mat-form-field>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Country</mat-label>
+                            <input matInput placeholder="Country">
+                        </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <mat-form-field appearance="outline">
+                            <mat-label>City</mat-label>
+                            <input matInput placeholder="City">
+                        </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Phone Number</mat-label>
+                            <input matInput placeholder="Phone Number">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Card Number</mat-label>
+                            <input matInput placeholder="Card Number">
+                        </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Expiration Date</mat-label>
+                            <input matInput placeholder="Expiration Date">
+                        </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <mat-form-field appearance="outline">
+                            <mat-label>CCV</mat-label>
+                            <input matInput placeholder="CCV">
+                        </mat-form-field>
+                    </div>
+                </div>
                 <button class="btn btn-success" type="submit">Purchase</button>
-                </form>
+            </form>
         </div>
    </div>
 </div>

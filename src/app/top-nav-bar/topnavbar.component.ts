@@ -30,6 +30,8 @@ export class TopNavBarComponent implements OnInit {
       if (localStorage.getItem('savedJ')) {
         this.items = JSON.parse(localStorage.getItem('savedJ'))
       }
+
+      localStorage.getItem('savedJ')
      }
 
   ngOnInit(): void {

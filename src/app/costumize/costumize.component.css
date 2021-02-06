@@ -49,3 +49,7 @@ ul .price {
     background-color: rgb(132, 63, 3);
     color: #fff;
 }
+
+.mat-radio-label {
+    color: black !important;
+}
