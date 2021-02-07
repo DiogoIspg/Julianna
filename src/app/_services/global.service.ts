@@ -3,16 +3,25 @@ import { Injectable } from '@angular/core';
 
 @Injectable({providedIn: 'root'})
 export class GlobalService {
- itemValue = new BehaviorSubject(this.savedJ);
+    savedJ = new BehaviorSubject(this.theSavedJ);
+    orders = new BehaviorSubject(this.theOrders);
 
- set savedJ(value) {
-   this.itemValue.next(value);
+ set theSavedJ(value) {
+   this.savedJ.next(value);
    localStorage.setItem('savedJ', value);
  }
 
- get savedJ() {
+ get theSavedJ() {
    return localStorage.getItem('savedJ');
  }
 
+ set theOrders(value) {
+    this.orders.next(value);
+    localStorage.setItem('orders', value);
+  }
+
+  get theOrders() {
+    return localStorage.getItem('orders');
+  }
 
 }

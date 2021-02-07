@@ -4,6 +4,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { User } from '@/_models/user';
+import { GlobalService } from '@/_services/global.service';
+import { MatSnackBar } from '@angular/material/snack-bar'; 
 
 @Component({
   selector: 'app-top-nav-bar',
@@ -20,18 +22,39 @@ export class TopNavBarComponent implements OnInit {
   user: User;
   error = '';
   items = [];
-
+  itemCount = 0;
   constructor(
     private auth: AuthenticationService,
     private router: Router,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
+    private globalServ: GlobalService,
+    private _snackBar: MatSnackBar
     ) {
-      if (localStorage.getItem('savedJ')) {
-        this.items = JSON.parse(localStorage.getItem('savedJ'))
-      }
+      
+      this.items = JSON.parse(globalServ.theSavedJ) ?? [];
 
-      localStorage.getItem('savedJ')
+      if(this.items)
+        this.itemCount = this.items.length;
+
+      this.globalServ.savedJ.subscribe(x => {
+        this.items = JSON.parse(x) ?? [];
+
+        if(this.items.length !== 0) {
+          if(this.itemCount < this.items.length ) {
+            this._snackBar.open("Added item to cart!", "Ok", {
+              duration: 3000,
+            })
+          } else if(this.itemCount > this.items.length) {
+            this._snackBar.open("Removed item from cart!", "Ok", {
+              duration: 3000,
+            })
+          }
+        }
+       
+        this.itemCount = this.items.length;
+      });
+
      }
 
   ngOnInit(): void {

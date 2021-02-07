@@ -4,6 +4,7 @@ const OrbitControls = require('three-orbitcontrols')
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AuthenticationService } from '@/_services/authentication.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { GlobalService } from '@/_services/global.service';
 
 
 @Component({
@@ -28,7 +29,8 @@ export class CostumizeComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
     private auth: AuthenticationService,
     private router: Router,
-    private ra: ActivatedRoute) {
+    private ra: ActivatedRoute,
+    private globalServ: GlobalService) {
 
     this.ra.queryParams.subscribe(params => {
       this.paramType = params['type'];
@@ -47,8 +49,6 @@ export class CostumizeComponent implements OnInit {
       price: '200€'
     });
 
-   
-  
     this.onChanges();
   }
 
@@ -126,15 +126,14 @@ export class CostumizeComponent implements OnInit {
 
   saveJewels() {
     console.log({...this.myForm.value});
-
-    let savedJewelries = 'savedJ';
     let saved = [];
 
-    if(localStorage.getItem(savedJewelries)) {
-      saved = JSON.parse(localStorage.getItem(savedJewelries));
+    if(this.globalServ.theSavedJ) {
+      saved = JSON.parse(this.globalServ.theSavedJ);
     }
 
     saved.push({...this.myForm.value})
-    localStorage.setItem(savedJewelries, JSON.stringify(saved));
+
+    this.globalServ.theSavedJ = JSON.stringify(saved);
   }
 }

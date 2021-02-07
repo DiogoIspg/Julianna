@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header card-header-tabs card-header-primary" style="background:#7F3902;">
+            <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                    <h3 class="nav-tabs-title" style="padding:0px">
+                            My Orders
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+        <div *ngIf="allOrders.length === 0">
+            You don't currently have any order.
+        </div>
+            <div style="text-align: center;">
+                <div *ngIf="allOrders.length !== 0" >
+                    <mat-expansion-panel hideToggle *ngFor="let order of allOrders;index as i;">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            Order Number {{i+1}}  {{order.firstName}} {{order.lastName}}
+                          </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        
+                        <div class="row" style="border: 1px solid #99a9a9;">
+                            <div class="col">
+                                Purchase date: {{order.date | date}}
+                            </div>
+                            <div class="col">
+                                {{order.billaddress}}
+                            </div>
+                            <div class="col">
+                                {{order.country}}
+                            </div>
+                            <div class="col">
+                                {{order.city}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row" *ngFor="let item of order.items; index as j;">
+                            <div class="col-1">
+                                #{{j}}
+                            </div>
+                            <div class="col-3">
+                                Item: 
+                                {{item.type}}
+                                {{item.gem}}
+                                {{item.price}}
+                            </div>
+                        </div>
+                        
+                      </mat-expansion-panel>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

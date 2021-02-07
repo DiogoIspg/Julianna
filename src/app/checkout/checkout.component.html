@@ -15,13 +15,13 @@
                     <div class="col">
                         <mat-form-field appearance="outline">
                             <mat-label>First Name</mat-label>
-                            <input matInput placeholder="First Name">
+                            <input matInput placeholder="First Name" formControlName="firstName">
                         </mat-form-field>
                     </div>
                     <div class="col">
                         <mat-form-field appearance="outline">
                             <mat-label>Last Name</mat-label>
-                            <input matInput placeholder="Last Name">
+                            <input matInput placeholder="Last Name" formControlName="lastName">
                         </mat-form-field>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                     <div class="col">
                         <mat-form-field appearance="outline">
                             <mat-label>Billing Address</mat-label>
-                            <input matInput placeholder="Billing Address">
+                            <input matInput placeholder="Billing Address" formControlName="billaddress">
                         </mat-form-field>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                     <div class="col">
                         <mat-form-field appearance="outline">
                             <mat-label>Billing Address 2</mat-label>
-                            <input matInput placeholder="Billing Address 2">
+                            <input matInput placeholder="Billing Address 2" formControlName="billaddress2">
                         </mat-form-field>
                     </div>
                 </div>
@@ -48,19 +48,19 @@
                     <div class="col">
                         <mat-form-field appearance="outline">
                             <mat-label>Country</mat-label>
-                            <input matInput placeholder="Country">
+                            <input matInput placeholder="Country" formControlName="country">
                         </mat-form-field>
                     </div>
                     <div class="col">
                         <mat-form-field appearance="outline">
                             <mat-label>City</mat-label>
-                            <input matInput placeholder="City">
+                            <input matInput placeholder="City" formControlName="city">
                         </mat-form-field>
                     </div>
                     <div class="col">
                         <mat-form-field appearance="outline">
                             <mat-label>Phone Number</mat-label>
-                            <input matInput placeholder="Phone Number">
+                            <input matInput placeholder="Phone Number" formControlName="phoneNumber">
                         </mat-form-field>
                     </div>
                 </div>
@@ -69,23 +69,23 @@
                     <div class="col">
                         <mat-form-field appearance="outline">
                             <mat-label>Card Number</mat-label>
-                            <input matInput placeholder="Card Number">
+                            <input matInput placeholder="Card Number" formControlName="cardNumber">
                         </mat-form-field>
                     </div>
                     <div class="col">
                         <mat-form-field appearance="outline">
                             <mat-label>Expiration Date</mat-label>
-                            <input matInput placeholder="Expiration Date">
+                            <input matInput placeholder="Expiration Date" formControlName="cardExpiration">
                         </mat-form-field>
                     </div>
                     <div class="col">
                         <mat-form-field appearance="outline">
                             <mat-label>CCV</mat-label>
-                            <input matInput placeholder="CCV">
+                            <input matInput placeholder="CCV" formControlName="cardNumberCcv">
                         </mat-form-field>
                     </div>
                 </div>
-                <button class="btn btn-success" type="submit">Purchase</button>
+                <button class="btn btn-success" type="button" (click)="purchase()">Purchase</button>
             </form>
         </div>
    </div>

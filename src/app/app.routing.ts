@@ -8,6 +8,7 @@ import { LandingPageComponent } from './landing-page/landing.component';
 import { CostumizeComponent } from './costumize/costumize.component';
 import { MyjewelsComponent } from './myjewels/myjewels.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { MyordersComponent } from './myorders/myorders.component';
 
 export const appRoutes: Routes = [
     { 
@@ -27,6 +28,10 @@ export const appRoutes: Routes = [
     { 
         path: 'costumize', 
         component: CostumizeComponent, 
+    },
+    { 
+        path: 'MyOrders', 
+        component: MyordersComponent, 
     },
     
     // otherwise redirect to home

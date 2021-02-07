@@ -31,7 +31,9 @@ import { CostumizeComponent } from './costumize/costumize.component';
 import { TopNavBarComponent } from './top-nav-bar/topnavbar.component';
 import { MyjewelsComponent } from './myjewels/myjewels.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MyordersComponent } from './myorders/myorders.component';
+import {MatExpansionModule} from '@angular/material/expansion'; 
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -50,9 +52,11 @@ import { CheckoutComponent } from './checkout/checkout.component';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    MatSnackBarModule,
     HttpClientModule,
     BrowserModule,
     MatRadioModule,
+    MatExpansionModule,
     // AgmCoreModule.forRoot({
       //   apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
       // })
@@ -66,6 +70,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     TopNavBarComponent,
     MyjewelsComponent,
     CheckoutComponent,
+    MyordersComponent,
   ],
   providers: [  
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
