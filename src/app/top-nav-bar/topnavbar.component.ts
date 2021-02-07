@@ -55,13 +55,14 @@ export class TopNavBarComponent implements OnInit {
         this.itemCount = this.items.length;
       });
 
-     }
+      this.globalServ.user.subscribe(x => this.user = JSON.parse(x));
+
+    }
 
   ngOnInit(): void {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-    this.user = this.auth.currentUserValue;
-
-    if(localStorage.getItem("currentUser")) {
+    
+    if(this.globalServ.theUser) {
       this.isLoggedIn = true;
     }
 

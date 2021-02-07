@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 export class GlobalService {
     savedJ = new BehaviorSubject(this.theSavedJ);
     orders = new BehaviorSubject(this.theOrders);
+    user = new BehaviorSubject(this.theUser);
 
  set theSavedJ(value) {
    this.savedJ.next(value);
@@ -23,5 +24,15 @@ export class GlobalService {
   get theOrders() {
     return localStorage.getItem('orders');
   }
+
+  set theUser(value) {
+    this.orders.next(value);
+    localStorage.setItem('currentUser', value);
+  }
+
+  get theUser() {
+    return localStorage.getItem('currentUser');
+  }
+
 
 }

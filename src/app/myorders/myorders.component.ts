@@ -13,7 +13,7 @@ export class MyordersComponent implements OnInit {
   constructor(
     private glbService: GlobalService
   ) {
-    this.allOrders = JSON.parse(glbService.theOrders) ?? [];
+    this.allOrders = JSON.parse(this.glbService.theOrders) ?? [];
   }
 
   ngOnInit(): void {

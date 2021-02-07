@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GlobalService } from '@/_services/global.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-checkout',
@@ -14,7 +15,9 @@ export class CheckoutComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private router: Router,
-    private glbService: GlobalService) { 
+    private glbService: GlobalService,
+    private _snackBar: MatSnackBar
+    ) { 
 
     this.checkoutForm = this.formBuilder.group({
       firstName: '',
@@ -50,7 +53,11 @@ export class CheckoutComponent implements OnInit {
     this.glbService.theOrders = JSON.stringify(orders);
     this.glbService.theSavedJ = '[]';
 
-    // this.router.navigate(['/orders']);
+    this._snackBar.open("Purchase confirmed!", "Ok", {
+      duration: 3000,
+    })
+
+    this.router.navigate(['MyOrders']);
   }
 
 }

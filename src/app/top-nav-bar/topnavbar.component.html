@@ -19,7 +19,6 @@
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" style="font-size: 90%; font-family: Montserrat,sans-serif;" href="/#/costumize">Customize! </a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" style="font-size: 90%; font-family: Montserrat,sans-serif;" href="#about">Who we are</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" style="font-size: 90%; font-family: Montserrat,sans-serif;" href="#service">Services</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" style="font-size: 90%; font-family: Montserrat,sans-serif;" href="#team">Team</a></li>
                 <li class="nav-item"><a class="nav-link" style="font-size: 90%; font-family: Montserrat,sans-serif;" href="#" data-toggle="modal" data-target="#loginModal">login</a></li>
             </ul>
         </div>
@@ -43,7 +42,7 @@
                 </li>
 
                 <li class="nav-item">
-                    Welcome {{user.username}}!
+                    Welcome {{user.username}}
                 </li>
 
                 <li class="nav-item">
@@ -73,7 +72,7 @@
                         </div>
                     </div>
                 </div>
-                <a [disabled]="loading" class="btn btn-j-primary " href="#">Register</a>
+                <!-- <a [disabled]="loading" class="btn btn-j-primary " href="#">Register</a> -->
                 <button [disabled]="loading" type="submit" class="btn btn-j-primary">Login</button>
             </form>
         </div>
