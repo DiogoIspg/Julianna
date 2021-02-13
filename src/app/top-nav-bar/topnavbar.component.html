@@ -70,10 +70,18 @@
                             <label class="loginform" for="passwordInput"> Password: </label>
                             <input class="input-login form-control" formControlName="password" placeholder="password" type="password" id="passwordInput">
                         </div>
+                        <div class="col-12" *ngIf="inRegister">
+                            <label class="loginform" for="emailInput"> Email: </label>
+                            <input class="input-login form-control" formControlName="email" placeholder="email" type="text" id="emailInput">
+                        </div>
                     </div>
                 </div>
-                <!-- <a [disabled]="loading" class="btn btn-j-primary " href="#">Register</a> -->
-                <button [disabled]="loading" type="submit" class="btn btn-j-primary">Login</button>
+
+                <button [hidden]="inLogin" [disabled]="loading" class="btn btn-j-primary" type="submit">Register</button>
+                <button [hidden]="inLogin" [disabled]="loading" class="btn btn-j-primary" (click)="backToLogin()">Back to Login</button>
+
+                <button [hidden]="inRegister" [disabled]="loading" class="btn btn-j-primary" (click)="toRegister()">Register</button>
+                <button [hidden]="inRegister" [disabled]="loading" type="submit" class="btn btn-j-primary">Login</button>
             </form>
         </div>
     </div>

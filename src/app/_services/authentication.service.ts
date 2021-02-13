@@ -21,13 +21,22 @@ export class AuthenticationService {
         return this.currentUserSubject.value;
     }
 
+    register(username: string, password: string, email: string) {
+        return this.http.post<any>(`${environment.apiUrl}/users/register`, { username, password, email })
+            .pipe(map(user => {
+               // register complete
+               this.login(username, password).subscribe(x => x);
+            }));
+    }
+
     login(username: string, password: string) {
         return this.http.post<any>(`${environment.apiUrl}/users/authenticate`, { username, password })
             .pipe(map(user => {
                 // login successful if there's a jwt token in the response
                 if (user && user.token) {
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
-                    localStorage.setItem('currentUser', JSON.stringify(user));
+                    // localStorage.setItem('currentUser', JSON.stringify(user));
+                    this.glbService.theUser = JSON.stringify(user);
                     this.currentUserSubject.next(user);
                 }
 

@@ -7,3 +7,9 @@ export class User {
     token?: any;
     normalizedEmail: string;
 }
+
+export class UserPass {
+    username: string;
+    password: string;
+    email: string;
+}

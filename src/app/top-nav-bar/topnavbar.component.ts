@@ -23,6 +23,10 @@ export class TopNavBarComponent implements OnInit {
   error = '';
   items = [];
   itemCount = 0;
+
+  inRegister = false;
+  inLogin = true;
+
   constructor(
     private auth: AuthenticationService,
     private router: Router,
@@ -31,7 +35,6 @@ export class TopNavBarComponent implements OnInit {
     private globalServ: GlobalService,
     private _snackBar: MatSnackBar
     ) {
-      
       this.items = JSON.parse(globalServ.theSavedJ) ?? [];
 
       if(this.items)
@@ -54,10 +57,19 @@ export class TopNavBarComponent implements OnInit {
        
         this.itemCount = this.items.length;
       });
+    this.globalServ.user.subscribe(x => this.user = JSON.parse(x));
+  }
 
-      this.globalServ.user.subscribe(x => this.user = JSON.parse(x));
+  toRegister() {
+    this.inRegister = true;
+    this.inLogin = false;
+  }
 
-    }
+  backToLogin() {
+    this.inRegister = false;
+    this.inLogin = true;
+  }
+  
 
   ngOnInit(): void {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
@@ -68,7 +80,8 @@ export class TopNavBarComponent implements OnInit {
 
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
+      email: [''],
   });
   }
 
@@ -87,7 +100,9 @@ export class TopNavBarComponent implements OnInit {
     }
 
     this.loading = true;
-    this.auth.login(this.f.username.value, this.f.password.value)
+
+    if(this.f.email.value !== '') {
+      this.auth.register(this.f.username.value, this.f.password.value, this.f.email.value)
       .pipe(first())
       .subscribe(
           data => {
@@ -105,6 +120,27 @@ export class TopNavBarComponent implements OnInit {
               this.error = error;
               this.loading = false;
           });
+    }
+    else {
+      this.auth.login(this.f.username.value, this.f.password.value)
+      .pipe(first())
+      .subscribe(
+          data => {
+              let els = document.getElementsByClassName("modal-backdrop");
+              while (els.length > 0) els[0].remove();
+
+              let el = document.getElementById("loginModal");
+              el.remove();
+            
+              this.isLoggedIn = true;
+              this.router.navigate([this.returnUrl]);
+          },
+          error => {
+              console.log(error);
+              this.error = error;
+              this.loading = false;
+          });
+    }
   }
 
   get f() { return this.loginForm.controls; }
